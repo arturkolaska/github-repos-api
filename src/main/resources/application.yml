@@ -1,3 +1,5 @@
---- #GitHub API personal access token to increase request rate limit
+---
+# Enter GitHub API OAuth token (or personal access token)
+# to increase the requests limit from 60 to 5000 per hour.
 token: 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
 ---

@@ -12,11 +12,15 @@ public class YAMLConfig {
     private String token;
 
     public String getToken() {
-        return token;
+        return "token " + token;
     }
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getAuthorizationHeader() {
+        return token.isEmpty() ? "Null" : "Authorization";
     }
 
     @Override
