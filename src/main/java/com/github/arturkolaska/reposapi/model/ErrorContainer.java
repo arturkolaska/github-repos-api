@@ -1,9 +1,11 @@
 package com.github.arturkolaska.reposapi.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.http.HttpStatus;
 
-public class ErrorContainer extends RepositoryModel {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ErrorContainer {
 
     @JsonProperty("error-code")
     private final int errorCode;
