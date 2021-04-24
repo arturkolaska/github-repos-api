@@ -1,5 +1,14 @@
----
 # Enter GitHub API OAuth token (or personal access token)
 # to increase the requests limit from 60 to 5000 per hour.
 token: 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
 ---
+spring:
+  profiles: dev
+server:
+  port: 8080
+  address: http://localhost:8080
+---
+spring:
+  profiles: prod
+server:
+  address: https://arturkolaska.herokuapp.com
