@@ -17,7 +17,7 @@ public class HomeController {
     @GetMapping(path = "/", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Map<String, String>>> getAllRepositories() {
         return ResponseEntity.ok(Arrays.asList(
-                Collections.singletonMap("user_repositories_uri", "/{username}/repos"),
-                Collections.singletonMap("user_total_stars_uri", "/{username}/repos/total-stars")));
+                Collections.singletonMap("user_repositories_uri", "/v1/{username}/repos"),
+                Collections.singletonMap("user_total_stars_uri", "/v1/{username}/repos/total-stars")));
     }
 }
