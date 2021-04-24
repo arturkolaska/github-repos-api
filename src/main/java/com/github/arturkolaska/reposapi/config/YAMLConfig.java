@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class YAMLConfig {
 
     private String token;
+    private String url;
 
     public String getToken() {
         return "token " + token;
@@ -17,6 +18,14 @@ public class YAMLConfig {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getAuthorizationHeader() {

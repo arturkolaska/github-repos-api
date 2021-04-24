@@ -3,12 +3,15 @@
 token: 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
 ---
 spring:
-  profiles: dev
+  config:
+    activate:
+      on-profile: dev
 server:
   port: 8080
-  address: http://localhost:8080
+url: http://localhost:8080
 ---
 spring:
-  profiles: prod
-server:
-  address: https://arturkolaska.herokuapp.com
+  config:
+    activate:
+      on-profile: prod
+url: https://arturkolaska.herokuapp.com
