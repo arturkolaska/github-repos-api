@@ -14,7 +14,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 public class HomeController {
 
-    @GetMapping(path = "/", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = {"/", "/v1"}, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Map<String, String>>> getAllRepositories() {
         return ResponseEntity.ok(Arrays.asList(
                 Collections.singletonMap("user_repositories_uri", "/v1/{username}/repos"),
