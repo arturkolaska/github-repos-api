@@ -21,7 +21,6 @@ public class ControllerExceptionHelper {
 
     private static final Logger log = LoggerFactory.getLogger(ControllerExceptionHelper.class);
 
-
     @ExceptionHandler(value = WebClientErrorException.class)
     public ResponseEntity<Object> handleWebClientErrorException(WebClientErrorException ex) {
         log.error(ex.toString());
@@ -30,8 +29,8 @@ public class ControllerExceptionHelper {
 
     @ExceptionHandler(NoHandlerFoundException.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public ResponseEntity<Object> handleNotFoundException() {
-        log.error(NOT_FOUND.toString());
+    public ResponseEntity<Object> handleNotFoundException(NoHandlerFoundException ex) {
+        log.error(ex.getMessage());
         return new ResponseEntity<>(new ErrorContainer(404, NOT_FOUND), NOT_FOUND);
     }
 

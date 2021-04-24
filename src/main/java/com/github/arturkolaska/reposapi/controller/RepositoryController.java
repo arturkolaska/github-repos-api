@@ -25,13 +25,11 @@ public class RepositoryController {
 
     @GetMapping(produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<RepositoryModel>> getAllRepositories(@PathVariable String username) {
-        return ResponseEntity
-                .ok(service.getAllRepositoriesByUsername(username));
+        return ResponseEntity.ok(service.getAllRepositoriesByUsername(username));
     }
 
     @GetMapping(path = "/total-stars", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<String, Integer>> getStarsCountSum(@PathVariable String username) {
-        return ResponseEntity
-                .ok(Collections.singletonMap(TOTAL_STARS_KEY, service.getTotalStarsByUsername(username)));
+    public ResponseEntity<Map<String, Integer>> getTotalStars(@PathVariable String username) {
+        return ResponseEntity.ok(Collections.singletonMap(TOTAL_STARS_KEY, service.getTotalStarsByUsername(username)));
     }
 }

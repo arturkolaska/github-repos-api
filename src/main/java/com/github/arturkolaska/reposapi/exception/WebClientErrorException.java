@@ -40,9 +40,6 @@ public class WebClientErrorException extends IllegalStateException {
 
     @Override
     public String toString() {
-        return "WebClientErrorException{" +
-                "code=" + code +
-                ", status=" + status +
-                '}';
+        return "WebClientErrorException: code=" + code + ", status=" + status;
     }
 }

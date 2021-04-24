@@ -18,7 +18,6 @@ import static com.github.arturkolaska.reposapi.constants.StringConstants.GITHUB_
 import static org.springframework.http.HttpHeaders.ACCEPT;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-
 @Service
 public class RepositoryServiceImpl implements RepositoryService {
 
@@ -36,7 +35,7 @@ public class RepositoryServiceImpl implements RepositoryService {
 
     @Override
     public List<RepositoryModel> getAllRepositoriesByUsername(String username) throws WebClientErrorException {
-        log.info("Running getAllRepositoriesByUsername service for username: {}.", username);
+        log.info("Running getAllRepositoriesByUsername service for username={}.", username);
         return client
                 .get()
                 .uri(GITHUB_API_REPOS_URI, username)
@@ -52,7 +51,7 @@ public class RepositoryServiceImpl implements RepositoryService {
 
     @Override
     public Integer getTotalStarsByUsername(String username) {
-        log.info("Running getStarsCountSumByUsername service for username: {}.", username);
+        log.info("Running getStarsCountSumByUsername service for username={}.", username);
         return getAllRepositoriesByUsername(username)
                 .stream()
                 .mapToInt(repository -> repository.starsCount)
