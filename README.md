@@ -6,13 +6,12 @@ It can list repositories of a given user or sum stargazers across all the reposi
 * [Technologies](#technologies)
 * [General info](#general-info)
 * [Endpoints with sample responses](#endpoints-with-sample-responses)
-    + [`/v1/{username}/repos`](#get--v1-username--repos-)
-    + [`/v1/{username}/repos/total-stars`](#get---v1--username--repos-total-stars-)
-    + [`/v1` `/`](#get---v1---get----)
+    + [`/v1/{username}/repos`](#get-v1usernamerepos)
+    + [`/v1/{username}/repos/total-stars`](#get-v1usernamerepostotal-stars)
+    + [`/v1` `/`](#get-v1-get-)
 * [Usage](#usage)
     + [Run the online demo](#a-run-the-online-demo)
     + [Run locally](#b-run-locally)
-        - [Increase the requests limit](#increase-the-requests-limit--set-by--apigithubcom--)
 * [Improvement ideas](#improvement-ideas)
 
 ## Technologies
@@ -86,7 +85,7 @@ To send a request you can use:
 * a terminal (with a program like `curl`)
 * a client like Postman (no additional headers required)
 
-### a. Run the online demo
+### a) Run the online demo
 
 The app is hosted on [arturkolaska.herokuapp.com](https://arturkolaska.herokuapp.com). Sample request:
 
@@ -94,7 +93,7 @@ The app is hosted on [arturkolaska.herokuapp.com](https://arturkolaska.herokuapp
 http://arturkolaska.herokuapp.com/v1/allegro/repos
 ```
 
-### b. Run locally
+### b) Run locally
 
 Go to the repository folder and run `./gradlew bootRun`. The app should now be running on *localhost:8080*. Sample
 request:
