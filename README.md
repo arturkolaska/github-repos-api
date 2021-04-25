@@ -1,10 +1,10 @@
 # GitHub Repos API
 
 A simple Web API that uses the public GitHub API.  
-It can list repositories of a given user or sum stargazers across all the repositories.
+It can list repositories of a given user and sum stargazers across the repositories.
 
+## Table of Contents
 
-### Table of Contents
 * [Technologies](#technologies)
 * [General info](#general-info)
 * [Endpoints with sample responses](#endpoints-with-sample-responses)
