@@ -12,24 +12,6 @@ public class WebClientErrorException extends IllegalStateException {
         this.status = HttpStatus.valueOf(code);
     }
 
-    public WebClientErrorException(String message, int code) {
-        super(message);
-        this.code = code;
-        this.status = HttpStatus.valueOf(code);
-    }
-
-    public WebClientErrorException(String message, Throwable cause, int code) {
-        super(message, cause);
-        this.code = code;
-        this.status = HttpStatus.valueOf(code);
-    }
-
-    public WebClientErrorException(Throwable cause, int code) {
-        super(cause);
-        this.code = code;
-        this.status = HttpStatus.valueOf(code);
-    }
-
     public int getCode() {
         return code;
     }

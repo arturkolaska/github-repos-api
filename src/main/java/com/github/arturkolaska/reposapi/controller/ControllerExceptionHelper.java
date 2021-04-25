@@ -6,15 +6,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+
 import java.util.concurrent.TimeoutException;
 
-import static org.springframework.http.HttpStatus.NOT_FOUND;
-import static org.springframework.http.HttpStatus.REQUEST_TIMEOUT;
+import static org.springframework.http.HttpStatus.*;
 
 @ControllerAdvice
 public class ControllerExceptionHelper {
@@ -29,7 +30,7 @@ public class ControllerExceptionHelper {
 
     @ExceptionHandler(NoHandlerFoundException.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public ResponseEntity<Object> handleNotFoundException(NoHandlerFoundException ex) {
+    public ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex) {
         log.error(ex.getMessage());
         return new ResponseEntity<>(new ErrorContainer(404, NOT_FOUND), NOT_FOUND);
     }
@@ -38,5 +39,12 @@ public class ControllerExceptionHelper {
     public ResponseEntity<Object> handleTimeoutException(TimeoutException ex) {
         log.error(ex.getMessage());
         return new ResponseEntity<>(new ErrorContainer(408, REQUEST_TIMEOUT), REQUEST_TIMEOUT);
+    }
+
+    @ExceptionHandler(value = HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<Object> handleHttpRequestMethodNotSupportedException
+            (HttpRequestMethodNotSupportedException ex) {
+        log.error(ex.getMessage());
+        return new ResponseEntity<>(new ErrorContainer(405, METHOD_NOT_ALLOWED), METHOD_NOT_ALLOWED);
     }
 }

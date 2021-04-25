@@ -13,7 +13,7 @@ public class ReposApiApplication {
     public static void main(String[] args) {
         ApplicationContext app = SpringApplication.run(ReposApiApplication.class, args);
 
-        var dispatcherServlet = (DispatcherServlet)app.getBean("dispatcherServlet");
-        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
+        var dispatcher = (DispatcherServlet) app.getBean("dispatcherServlet");
+        dispatcher.setThrowExceptionIfNoHandlerFound(true);
     }
 }
