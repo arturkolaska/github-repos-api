@@ -1,6 +1,6 @@
-# Enter GitHub API OAuth token (or personal access token)
+# Enter GitHub OAuth token (or personal access token)
 # to increase the requests limit from 60 to 5000 per hour.
-token: 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
+token:
 ---
 spring:
   config:
