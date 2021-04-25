@@ -109,7 +109,7 @@ localhost:8080/v1/allegro/repos/total-stars
 To increase the requests limit from 60 to 5000 per hour, edit the `application.yml`
 file (in `src/main/resources/`) and enter your GitHub OAuth token (or personal access token)
 into the `token: ` property.  
-If you exceed the hourly limit for your IP adress, you will get the following message:
+If you exceed the hourly limit for your IP address, you will get the following message:
 
 ```json
 {
