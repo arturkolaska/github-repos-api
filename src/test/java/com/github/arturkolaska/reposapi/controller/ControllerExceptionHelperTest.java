@@ -1,5 +1,6 @@
 package com.github.arturkolaska.reposapi.controller;
 
+import com.github.arturkolaska.reposapi.config.YAMLConfig;
 import com.github.arturkolaska.reposapi.model.ErrorContainer;
 import org.assertj.core.internal.bytebuddy.utility.RandomString;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,10 +29,12 @@ class ControllerExceptionHelperTest {
 
     @Autowired
     private TestRestTemplate client;
+    @Autowired
+    private YAMLConfig config;
 
     @BeforeEach
     void setUp() {
-        url = "http://localhost:" + port + "/v1/";
+        url = config.getUrl() + "/v1/";
     }
 
     @Test

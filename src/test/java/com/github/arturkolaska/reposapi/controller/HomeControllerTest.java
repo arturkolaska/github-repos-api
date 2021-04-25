@@ -1,5 +1,7 @@
 package com.github.arturkolaska.reposapi.controller;
 
+import com.github.arturkolaska.reposapi.config.YAMLConfig;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,6 +32,8 @@ class HomeControllerTest {
     private HomeController controller;
     @Autowired
     private TestRestTemplate client;
+    @Autowired
+    private YAMLConfig config;
 
     @Test
     public void contextLoads() {
@@ -39,7 +43,7 @@ class HomeControllerTest {
     @Test
     public void homeUrl_ShouldReturnListOfTwoMapsWithProperKeys() {
         // given
-        String url = "http://localhost:" + port + "/";
+        String url = config.getUrl() + "/";
         HttpMethod method = HttpMethod.GET;
 
         // when
