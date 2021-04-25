@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.http.HttpStatus;
 
+import java.util.Objects;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorContainer {
 
@@ -23,5 +25,15 @@ public class ErrorContainer {
 
     public HttpStatus getErrorMessage() {
         return errorMessage;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(errorCode, errorMessage);
+    }
+
+    @Override
+    public String toString() {
+        return "ErrorContainer{errorCode=" + errorCode + ", errorMessage=" + errorMessage + '}';
     }
 }
