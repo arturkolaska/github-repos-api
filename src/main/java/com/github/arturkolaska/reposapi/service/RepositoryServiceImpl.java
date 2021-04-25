@@ -54,7 +54,7 @@ public class RepositoryServiceImpl implements RepositoryService {
         log.info("Running getStarsCountSumByUsername service for username={}.", username);
         return getAllRepositoriesByUsername(username)
                 .stream()
-                .mapToInt(repository -> repository.starsCount)
+                .mapToInt(RepositoryModel::getStarsCount)
                 .sum();
     }
 }
