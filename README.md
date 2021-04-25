@@ -39,12 +39,12 @@ Returns a **list of repositories** of given GitHub user.
 ```json
 [
   {
-    "name": "functional-programming-workshop-2021",
-    "stargazers_count": 0
+    "name": "my-first-repo",
+    "stargazers_count": 20
   },
   {
-    "name": "http-clients-workshop-2021",
-    "stargazers_count": 0
+    "name": "my-second-repo",
+    "stargazers_count": 5
   }
 ]
 ```
@@ -57,7 +57,7 @@ Returns the **total of stargazers** across all repositories of given GitHub user
 
 ```json
 {
-  "total_stargazers_count": 0
+  "total_stargazers_count": 25
 }
 ```
 
