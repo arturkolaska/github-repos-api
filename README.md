@@ -73,7 +73,7 @@ Return **links** to the other endpoints.
     "user_repositories_url": "https://arturkolaska.herokuapp.com/v1/{username}/repos"
   },
   {
-    "user_total_stars_url: "https://arturkolaska.herokuapp.com/v1/{username}/repos/total-stars"
+    "user_total_stars_url": "https://arturkolaska.herokuapp.com/v1/{username}/repos/total-stars"
   }
 ]
 ```
