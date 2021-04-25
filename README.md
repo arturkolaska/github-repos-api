@@ -89,19 +89,19 @@ To send a request you can use:
 
 ### a) Run the online demo
 
-The app is hosted on [arturkolaska.herokuapp.com](https://arturkolaska.herokuapp.com). Sample request:
+The app is hosted on [arturkolaska.herokuapp.com](https://arturkolaska.herokuapp.com).
 
 ```
-http://arturkolaska.herokuapp.com/v1/allegro/repos
+http://arturkolaska.herokuapp.com/v1/allegro/repos/total-stars
 ```
 
 ### b) Run locally
 
-Go to the repository folder and run `./gradlew bootRun`. The app should now be running on *localhost:8080*. Sample
-request:
+Go to the repository folder and run `./gradlew bootRun`.  
+The app should now be running on *localhost:8080*.
 
 ```
-localhost:8080/v1/allegro/repos
+localhost:8080/v1/allegro/repos/total-stars
 ```
 
 #### Increase the requests limit (set by *api.github.com*)
