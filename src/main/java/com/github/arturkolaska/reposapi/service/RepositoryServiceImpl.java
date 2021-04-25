@@ -39,7 +39,7 @@ public class RepositoryServiceImpl implements RepositoryService {
         return client
                 .get()
                 .uri(GITHUB_API_REPOS_URI, username)
-                .header(config.getAuthorizationHeader(), "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")
+                .header(config.getAuthorizationHeader(), config.getToken())
                 .retrieve()
                 .onStatus(HttpStatus::isError, response -> {
                     throw new WebClientErrorException(response.rawStatusCode());
