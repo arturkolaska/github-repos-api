@@ -19,6 +19,7 @@ It can list repositories of a given user and sum stargazers across the repositor
 ## Technologies
 
 * Java 15
+* Gradle
 * Spring Boot 2.4.5
 * JUnit 5
 
